@@ -3,7 +3,7 @@
 _pkgname="autonumlock"
 pkgname="autonumlock-git"
 
-pkgver=1.0.0
+pkgver=0799a5a
 pkgrel=1
 
 pkgdesc="Script for watching for external keyboard and enabling numlock when connected. Useful for laptops that lack numeric block."
@@ -11,7 +11,7 @@ arch=("any")
 url="https://github.com/MightyPork/autonumlock"
 license=("MIT")
 
-depends=("bash usbutils numlockx")
+depends=(bash usbutils numlockx)
 
 makedepends=("git")
 
@@ -22,7 +22,7 @@ md5sums=("SKIP")
 
 pkgver() {
 	cd "${srcdir}/${_pkgname}"
-	git describe --tags | sed "s|-|.|g"
+	git describe --always | sed 's|-|.|g'
 }
 
 package() {
