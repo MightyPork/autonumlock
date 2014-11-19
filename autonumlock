@@ -1,0 +1,69 @@
+#!/bin/bash
+
+VERSION="1.0"
+
+if [[ $1 == "-v" ]]; then
+
+
+	echo ""
+	echo "AutoNumlock v."$VERSION
+	echo ""
+	echo "(c) 2014, Ondřej Hruška <ondra@ondrovo.com>"
+	echo "MIT License"
+	echo ""
+
+	exit
+fi
+
+if [[ -z $1 || $1 == "-h" ]]; then
+	echo ""
+	echo "AutoNumlock v."$VERSION
+	echo ""
+	echo "Script for watching for external keyboard, and enabling numlock when found."
+	echo "Intended for use with laptops that lack numeric block on internal keyboard."
+	echo ""
+	echo "USAGE: $(basename $0) [-h] [-v] <device> [<interval>]"
+	echo "    <device> ...... device ID of your external keyboard (obtained with lsusb)"
+	echo "    <interval> .... number of seconds between checking (default: 1)"
+	echo "    -h ... help"
+	echo "    -v ... version"
+	echo ""
+	exit
+fi
+
+echo "External keyboard ID to watch for: "$1;
+
+
+sleeptime=1
+
+if [[ $2 > 0 ]]; then
+	sleeptime=$2
+fi
+
+echo "Refresh interval: "$sleeptime" s"
+
+last_state=-1
+
+while [ 1 ]; do
+
+	sleep $sleeptime
+
+	finds=$(lsusb | grep $1);
+	if [[ -z $finds ]]; then
+
+		if [[ $last_state != 0 ]]; then
+			echo "External keyboard NOT FOUND, disabling numlock."
+			numlockx off
+			last_state=0
+		fi
+
+	else
+
+		if [[ $last_state != 1 ]]; then
+			echo "External keyboard DETECTED, enabling numlock."
+			numlockx on
+			last_state=1
+		fi
+	fi
+
+done;
