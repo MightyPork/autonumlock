@@ -3,7 +3,7 @@ AutoNumlock
 
 This script runs a loop, checking USB devices with `lsusb`, and grepping it.
 
-When a device matching the given identifier is found, numlock is enabled, otherwise it's disabled.autonumlock 045e:0783 0.5
+When a device matching the given identifier is found, numlock is enabled, otherwise it's disabled.
 
 The change happens only when the device is connected or disconnected, you can adjust numlock manually otherwise.
 
