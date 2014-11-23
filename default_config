@@ -2,7 +2,7 @@
 
 
 # List of USB keyboards (with numeric block) to check for.
-# The IDs can be obtained from "lssub"
+# The IDs can be obtained from "lsusb"
 devices=('<DEVICE>')
 
 
