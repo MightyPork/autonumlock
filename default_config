@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+# List of USB keyboards (with numeric block) to check for.
+# The IDs can be obtained from "lssub"
+devices=('<DEVICE>')
+
+
+# Refresh interval (seconds)
+# Length of sleep between USB device checks
+sleeptime=<SLEEP>
+
+
+# Called when keyboard is added
+function on_connect {
+	numlockx on
+	# ... add your custom commands ...
+}
+
+
+# Called when keyboard is removed
+function on_disconnect {
+	numlockx off
+	# ... add your custom commands ...
+}

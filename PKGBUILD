@@ -6,7 +6,7 @@ pkgname="autonumlock-git"
 pkgver=0799a5a
 pkgrel=1
 
-pkgdesc="Script for watching for external keyboard and enabling numlock when connected. Useful for laptops that lack numeric block."
+pkgdesc="Script for watching for external keyboard and enabling numlock when connected. Useful for laptops that lack numeric block. Can also be used to alter keyboard layout and run arbitrary scripts, using the config file."
 arch=("any")
 url="https://github.com/MightyPork/autonumlock"
 license=("MIT")
@@ -28,5 +28,10 @@ pkgver() {
 package() {
 	# install license
 	install -Dm 644 "${srcdir}/${_pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
-	install -Dm 755 "${srcdir}/${_pkgname}/autonumlock" "${pkgdir}/usr/bin/autonumlock"
+
+	mkdir "${pkgdir}/usr/share/${_pkgname}/"
+
+	cp -p "${srcdir}/${_pkgname}"/* "${pkgdir}/usr/share/${_pkgname}/"
+
+	ln -s /usr/share/${pkgname}/autonumlock "${pkgdir}/usr/bin/adios"
 }
