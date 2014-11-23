@@ -1,9 +1,10 @@
+#!/bin/bash
 # Maintainer: Ondrej Hruska <ondra@ondrovo.com>
 
 _pkgname="autonumlock"
 pkgname="autonumlock-git"
 
-pkgver=0799a5a
+pkgver=af5faed
 pkgrel=1
 
 pkgdesc="Script for watching for external keyboard and enabling numlock when connected. Useful for laptops that lack numeric block. Can also be used to alter keyboard layout and run arbitrary scripts, using the config file."
@@ -31,7 +32,9 @@ package() {
 
 	mkdir "${pkgdir}/usr/share/${_pkgname}/"
 
-	cp -p "${srcdir}/${_pkgname}"/* "${pkgdir}/usr/share/${_pkgname}/"
+	cp -p "${srcdir}/${_pkgname}/autonumlock" "${pkgdir}/usr/share/${_pkgname}/"
+	cp -p "${srcdir}/${_pkgname}/default_config" "${pkgdir}/usr/share/${_pkgname}/"
 
-	ln -s /usr/share/${pkgname}/autonumlock "${pkgdir}/usr/bin/adios"
+	mkdir -p "${pkgdir}/usr/bin/"
+	ln -s "/usr/share/${_pkgname}/autonumlock" "${pkgdir}/usr/bin/autonumlock"
 }
