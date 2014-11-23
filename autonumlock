@@ -2,7 +2,7 @@
 
 VERSION="1.1.0"
 CONFIG_FILE="$HOME/.autonumlock"
-CONFIG_FILE_SRC='./default_config'
+CONFIG_FILE_SRC='/usr/share/autonumlock/default_config'
 
 if [[ $1 == "-v" ]]; then
 
