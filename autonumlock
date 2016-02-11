@@ -158,7 +158,7 @@ if [[ -e $CONFIG_FILE ]]; then
 	[ -z "$1" ] || devices=($1)
 	[ -z "$2" ] || sleeptime=$2
 
-	echo -e $IGreen"Loaded config file from ~/.autonumlock."$Reset
+	echo -e $IGreen"Loaded config file from ~/.autonumlock"$Reset
 
 else
 	if [ -z $1 ]; then
