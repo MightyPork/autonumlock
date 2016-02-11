@@ -8,42 +8,6 @@ That's useful if you have a laptop and sometimes use it with a docking station.
 
 You can change the commands (in the config file) to something else, for example add `xmodmap` to remap some keys.
 
-Example usage
--------------
-
-- `$ autonumlock 045e:0783 0.5` - detect keyboard '045e:0783', poll every 500ms
-- `$ autonumlock Genius` - detect any USB device with Genius in the `lsusb` line
-
-You can use the config file to add extra commands, eg. xmodmap. The config file is created
-after you run for the first time.
-
-When AutoNumlock runs, you'll see something like this:
-
-```none
-$ autonumlock 1c4f:0002 5
-
-AutoNumlock v.1.1.4
-
-Creating config file in ~/.autonumlock for device "1c4f:0002", interval 5 seconds.
-
-Configured keyboards:
-
- - "1c4f:0002"
-
-Interval: 5 s
-
-Test cmd: lsusb | grep -i -e "1c4f:0002"
-
-Loop running...
-
-External keyboard CONNECTED.
-External keyboard DISCONNECTED.
-External keyboard CONNECTED.
-
-```
-
-It's best to run it as an autostart application in your DE.
-
 
 Help page
 ---------
@@ -73,35 +37,45 @@ You can also configure multiple keyboards there.
 
 ```
 
-Keyboard finder
----------------
 
-Use the `-l` flag to list your connected USB keyboards.
+Example usage
+-------------
 
-It searches `/sys/bus/usb/devices/` for HID devices with the keyboard protocol.
+- `$ autonumlock 045e:0783 0.5` - detect keyboard '045e:0783', poll every 500ms
+- `$ autonumlock Genius` - detect any USB device with Genius in the `lsusb` line
+
+When AutoNumlock runs, you'll see something like this:
 
 ```none
-$ autonumlock  -l
+$ autonumlock 1c4f:0002 5
 
 AutoNumlock v.1.1.4
 
-=== USB keyboard found ===
-ID:   04f2:0111
-Name: Chicony Electronics Co., Ltd KU-9908 Keyboard
+Creating config file in ~/.autonumlock for device "1c4f:0002", interval 5 seconds.
 
-=== USB keyboard found ===
-ID:   1c4f:0002
-Name: SiGma Micro Keyboard TRACER Gamma Ivory
+Configured keyboards:
+
+ - "1c4f:0002"
+
+Interval: 5 s
+
+Test cmd: lsusb | grep -i -e "1c4f:0002"
+
+Loop running...
+
+External keyboard CONNECTED.
+External keyboard DISCONNECTED.
+External keyboard CONNECTED.
 
 ```
 
-The keyboard finder is based on [this code](http://serverfault.com/a/126325/255963) by Juliano.
+It's best to run it as an autostart application in your DE.
 
 
 Config file
 -----------
 
-Autonumlock will create a config file in `~/.autonumlock` after you run it with the device ID for the first time.
+Autonumlock will create a config file in `~/.autonumlock` after you run it for the first time.
 
 It looks something like this:
 
@@ -134,3 +108,28 @@ function on_disconnect {
 }
 
 ```
+
+
+Keyboard finder
+---------------
+
+Use the `-l` flag to list your connected USB keyboards.
+
+It searches `/sys/bus/usb/devices/` for HID devices with the keyboard protocol.
+
+```none
+$ autonumlock  -l
+
+AutoNumlock v.1.1.4
+
+=== USB keyboard found ===
+ID:   04f2:0111
+Name: Chicony Electronics Co., Ltd KU-9908 Keyboard
+
+=== USB keyboard found ===
+ID:   1c4f:0002
+Name: SiGma Micro Keyboard TRACER Gamma Ivory
+
+```
+
+The keyboard finder is based on [this code](http://serverfault.com/a/126325/255963) by Juliano.
