@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.0"
+VERSION="1.1.3"
 CONFIG_FILE="$HOME/.autonumlock"
 CONFIG_FILE_SRC='/usr/share/autonumlock/default_config'
 

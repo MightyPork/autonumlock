@@ -8,7 +8,7 @@ When a device matching the given identifier is found, numlock is enabled, otherw
 The change happens only when the device is connected or disconnected, you can adjust numlock manually otherwise.
 
 ```none
-AutoNumlock v.1.1.0
+AutoNumlock v.1.1.3
 
 Script for watching for external keyboard, and enabling numlock when found.
 Intended for use with laptops that lack numeric block on internal keyboard.
