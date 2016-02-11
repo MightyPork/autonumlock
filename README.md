@@ -20,7 +20,7 @@ When AutoNumlock runs, you'll see something like this:
 ```none
 $ autonumlock 1c4f:0002 5
 
-AutoNumlock v.1.1.4
+AutoNumlock v.1.2.0
 
 Creating config file in ~/.autonumlock for device "1c4f:0002", interval 5 seconds.
 
@@ -49,7 +49,7 @@ Help page
 ```none
 $ autonumlock -h
 
-AutoNumlock v.1.1.4
+AutoNumlock v.1.2.0
 
 Monitors devices & enables numlock when USB keyboard is connected.
 Intended for laptops without a numeric block.
@@ -121,7 +121,7 @@ It searches `/sys/bus/usb/devices/` for HID devices with the keyboard protocol.
 ```none
 $ autonumlock  -l
 
-AutoNumlock v.1.1.4
+AutoNumlock v.1.2.0
 
 === USB keyboard found ===
 ID:   04f2:0111

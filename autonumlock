@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.1.4"
+VERSION="1.2.0"
 CONFIG_FILE="$HOME/.autonumlock"
 CONFIG_FILE_SRC='/usr/share/autonumlock/default_config'
 
@@ -89,8 +89,9 @@ echo
 
 
 if [[ $1 == "-v" ]]; then
-	echo "(c) 2014-2016, Ondřej Hruška <ondra@ondrovo.com>"
+	echo "(c) 2014-2016 Ondřej Hruška <ondra@ondrovo.com>"
 	echo
+	echo "https://github.com/MightyPork/autonumlock"
 	echo "MIT License"
 	echo
 

@@ -4,7 +4,7 @@
 _pkgname="autonumlock"
 pkgname="autonumlock"
 
-pkgver="1.1.3"
+pkgver="1.2.0"
 pkgrel=1
 
 pkgdesc="Script for watching for external keyboard and enabling numlock when connected. Useful for laptops that lack numeric block. Can also be used to alter keyboard layout and run arbitrary scripts, using the config file."
