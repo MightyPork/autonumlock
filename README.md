@@ -9,36 +9,6 @@ That's useful if you have a laptop and sometimes use it with a docking station.
 You can change the commands (in the config file) to something else, for example add `xmodmap` to remap some keys.
 
 
-Help page
----------
-
-```none
-$ autonumlock -h
-
-AutoNumlock v.1.1.4
-
-Monitors devices & enables numlock when USB keyboard is connected.
-Intended for laptops without a numeric block.
-
-Usage:
-
-autonumlock [-h|-v|-l] [<device>] [<interval>]
-    <device> ...... device ID of your external keyboard (obtained with lsusb)
-    <interval> .... number of seconds between checking (default: 1)
-    -h ... help
-    -v ... version
-    -l ... try to find USB keyboards
-
-After first successful start (with device id), a config file is created:
-  ~/.autonumlock
-
-The settings are then taken from the config file.
-You can also configure multiple keyboards there,
-and change the connect/disconnect commands.
-
-```
-
-
 Example usage
 -------------
 
@@ -71,6 +41,36 @@ External keyboard CONNECTED.
 ```
 
 It's best to run it as an autostart application in your DE.
+
+
+Help page
+---------
+
+```none
+$ autonumlock -h
+
+AutoNumlock v.1.1.4
+
+Monitors devices & enables numlock when USB keyboard is connected.
+Intended for laptops without a numeric block.
+
+Usage:
+
+autonumlock [-h|-v|-l] [<device>] [<interval>]
+    <device> ...... device ID of your external keyboard (obtained with lsusb)
+    <interval> .... number of seconds between checking (default: 1)
+    -h ... help
+    -v ... version
+    -l ... try to find USB keyboards
+
+After first successful start (with device id), a config file is created:
+  ~/.autonumlock
+
+The settings are then taken from the config file.
+You can also configure multiple keyboards there,
+and change the connect/disconnect commands.
+
+```
 
 
 Config file
