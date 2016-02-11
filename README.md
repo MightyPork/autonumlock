@@ -32,3 +32,25 @@ Example usage
 - `$ autonumlock Genius` ... Genius keyboard (part of line in lsusb, for grep)
 
 You can use the config file to add extra commands, eg. xmodmap.
+
+When AutoNumlock runs, you'll see something like this (using the config file):
+
+```none
+$ autonumlock 
+
+Keyboards
+ - "1c4f:0002"
+
+Interval: 10 s
+
+Test cmd: lsusb | grep -e "1c4f:0002"
+
+--- checking started ---
+
+External keyboard DETECTED, enabling numlock.
+CONNECT
+
+```
+
+It's best to run it as an Autostart application, eg. in Xfce4 using the "Session and Startup" settings page.
+
