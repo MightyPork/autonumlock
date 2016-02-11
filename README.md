@@ -4,8 +4,9 @@ AutoNumlock
 This script runs a loop, checking USB devices with `lsusb`.
 
 When a USB keyboard is connected or disconnected, it enables or disables numlock.
+That's useful if you have a laptop and sometimes use it with a docking station.
 
-The change happens only when the device is connected or disconnected, you can adjust numlock manually otherwise.
+You can change the commands (in the config file) to something else, for example add `xmodmap` to remap some keys.
 
 Example usage
 -------------
