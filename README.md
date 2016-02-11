@@ -30,10 +30,11 @@ autonumlock [-h|-v|-l] [<device>] [<interval>]
     -l ... try to find USB keyboards
 
 After first successful start (with device id), a config file is created:
-  /home/ondra/.autonumlock
+  ~/.autonumlock
 
 The settings are then taken from the config file.
-You can also configure multiple keyboards there.
+You can also configure multiple keyboards there,
+and change the connect/disconnect commands.
 
 ```
 

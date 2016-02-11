@@ -145,7 +145,8 @@ if [[ $1 == "-h" ]]; then
 	echo -e "  $IGreen"$CONFIG_FILE$Reset
 	echo
 	echo "The settings are then taken from the config file."
-	echo "You can also configure multiple keyboards there."
+	echo "You can also configure multiple keyboards there,"
+	echo "and change the connect/disconnect commands."
 	echo
 	exit
 fi
