@@ -19,7 +19,7 @@ after you run for the first time.
 When AutoNumlock runs, you'll see something like this:
 
 ```none
-$ ./autonumlock 1c4f:0002 5
+$ autonumlock 1c4f:0002 5
 
 AutoNumlock v.1.1.4
 
@@ -48,7 +48,7 @@ Help page
 ---------
 
 ```none
-$ ./autonumlock -h
+$ autonumlock -h
 
 AutoNumlock v.1.1.4
 
@@ -80,7 +80,7 @@ Use the `-l` flag to list your connected USB keyboards.
 It searches `/sys/bus/usb/devices/` for HID devices with the keyboard protocol.
 
 ```none
-$ ./autonumlock  -l
+$ autonumlock  -l
 
 AutoNumlock v.1.1.4
 
