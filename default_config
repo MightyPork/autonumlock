@@ -1,22 +1,23 @@
 #!/bin/bash
 
+###########################
+# AutoNumlock config file #
+###########################
 
-# List of USB keyboards (with numeric block) to check for.
-# The IDs can be obtained from "lsusb"
+# List of USB keyboards to check for.
+# You can specify multiple IDs, separated by space.
+# To get your keyboard ID, run `autonumlock -l`
 devices=('<DEVICE>')
-
 
 # Refresh interval (seconds)
 # Length of sleep between USB device checks
 sleeptime=<SLEEP>
-
 
 # Called when keyboard is added
 function on_connect {
 	numlockx on
 	# ... add your custom commands ...
 }
-
 
 # Called when keyboard is removed
 function on_disconnect {
