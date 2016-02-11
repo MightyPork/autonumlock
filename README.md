@@ -114,11 +114,11 @@ It looks something like this:
 # List of USB keyboards to check for.
 # You can specify multiple IDs, separated by space.
 # To get your keyboard ID, run `autonumlock -l`
-devices=('<DEVICE>')
+devices=('1c4f:0002')
 
 # Refresh interval (seconds)
 # Length of sleep between USB device checks
-sleeptime=<SLEEP>
+sleeptime=5
 
 # Called when keyboard is added
 function on_connect {
