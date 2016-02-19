@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.2.1"
+VERSION="1.2.2"
 CONFIG_FILE="$HOME/.autonumlock"
 CONFIG_FILE_SRC='/usr/share/autonumlock/default_config'
 
@@ -214,6 +214,12 @@ echo
 
 # main loop
 
+# Check what functions exist
+con_fn_type=$(type -t on_connect)
+dis_fn_type=$(type -t on_disconnect)
+conp_fn_type=$(type -t on_connect_poll)
+disp_fn_type=$(type -t on_disconnect_poll)
+
 last_state=-1
 while [ 1 ]; do
 
@@ -224,20 +230,24 @@ while [ 1 ]; do
 		if [[ $last_state != 0 ]]; then
 			echo -e "External keyboard ${IRed}DISCONNECTED$Reset."
 
-			on_disconnect
+			[[ $dis_fn_type == 'function' ]] && on_disconnect
 
 			last_state=0
 		fi
+
+		[[ $disp_fn_type == 'function' ]] && on_disconnect_poll
 
 	else
 
 		if [[ $last_state != 1 ]]; then
 			echo -e "External keyboard ${IGreen}CONNECTED$Reset."
 
-			on_connect
+			[[ $con_fn_type == 'function' ]] && on_connect
 
 			last_state=1
 		fi
+
+		[[ $conp_fn_type == 'function' ]] && on_connect_poll
 	fi
 
 	sleep $sleeptime

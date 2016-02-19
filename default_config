@@ -13,14 +13,34 @@ devices=('<DEVICE>')
 # Length of sleep between USB device checks
 sleeptime=<SLEEP>
 
-# Called when keyboard is added
+
+
+#### When keyboard is connected ####
+
+# plug-in event
 function on_connect {
 	numlockx on
-	# ... add your custom commands ...
+	# ... your custom commands go here ...
 }
 
-# Called when keyboard is removed
+
+# called each poll when connected
+function on_connect_poll {
+	# ... This is a good place to run `xmodmap` ...
+}
+
+
+
+#### When keyboard is missing ####
+
+# disconnect event
 function on_disconnect {
 	numlockx off
-	# ... add your custom commands ...
+	# ...
+}
+
+
+# called each poll when missing
+function on_disconnect_poll {
+	# ...
 }
