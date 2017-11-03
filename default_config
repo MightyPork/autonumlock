@@ -14,33 +14,33 @@ devices=('<DEVICE>')
 sleeptime=<SLEEP>
 
 
-
 #### When keyboard is connected ####
 
 # plug-in event
 function on_connect {
-	numlockx on
-	# ... your custom commands go here ...
+  numlockx on
+  # ... your custom commands go here ...
 }
 
 
 # called each poll when connected
 function on_connect_poll {
-	# ... This is a good place to run `xmodmap` ...
+  false 
+  # something must be here, or bash throws a syntax error...
 }
-
 
 
 #### When keyboard is missing ####
 
 # disconnect event
 function on_disconnect {
-	numlockx off
-	# ...
+  numlockx off
+  # ...
 }
 
 
 # called each poll when missing
 function on_disconnect_poll {
-	# ...
+  false 
+  # ...
 }
