@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION="1.2.2"
+VERSION="1.2.3"
 
 # find script location regardless where it was called from, resolving symlinks, too
 # solution taken from https://stackoverflow.com/a/246128/4067384
